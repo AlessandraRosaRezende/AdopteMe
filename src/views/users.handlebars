@@ -1,0 +1,26 @@
+<h1>Usuários Cadastrados</h1>
+
+{{#if usuarios}}
+<ul style="list-style: none; padding: 0;">
+  {{#each usuarios}}
+  <li style="margin-bottom: 15px; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+    <p><strong>Nome:</strong> {{this.first_name}} {{this.last_name}}</p>
+    <p><strong>Email:</strong> {{this.email}}</p>
+    <p><strong>Role:</strong> {{this.role}}</p>
+    <p><strong>Pets:</strong>
+      {{#if this.pets.length}}
+    <ul>
+      {{#each this.pets}}
+      <li>{{this.name}} ({{this.specie}})</li>
+      {{/each}}
+    </ul>
+    {{else}}
+    Nenhum pet associado.
+    {{/if}}
+    </p>
+  </li>
+  {{/each}}
+</ul>
+{{else}}
+<p>Nenhum usuário cadastrado ainda.</p>
+{{/if}}

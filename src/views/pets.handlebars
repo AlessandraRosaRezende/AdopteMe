@@ -1,0 +1,16 @@
+<h1>Pets Cadastrados</h1>
+
+{{#if pets}}
+<ul style="list-style: none; padding: 0;">
+  {{#each pets}}
+  <li style="margin-bottom: 15px; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+    <p><strong>Nome:</strong> {{this.name}}</p>
+    <p><strong>Espécie:</strong> {{this.specie}}</p>
+    <p><strong>Data de Nascimento:</strong> {{this.birthDate}}</p>
+    <p><strong>Adotado:</strong> {{#if this.adopted}}Sim{{else}}Não{{/if}}</p>
+  </li>
+  {{/each}}
+</ul>
+{{else}}
+<p>Nenhum pet cadastrado ainda.</p>
+{{/if}}
